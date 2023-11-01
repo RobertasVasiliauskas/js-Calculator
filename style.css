@@ -58,6 +58,24 @@ a{
     border-radius: 5px;
 
     display: flex;
+    flex-direction: column;
+
+}
+
+.display > div{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.display > div > p{
+    padding-right: 3px;
+
+    align-self: flex-end;
 }
 
 .buttons {
