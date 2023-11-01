@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>JavaScript Calculator</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="calculator.js"></script>
 </head>
 <body>
+
+<header>
+    <h1>Calculator</h1>
+</header>
+
+<main>
+    <div class="calculator">
+        <div class="display">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="buttons">
+            <div class="controls">
+                <button class="controls-btnClear">Clear</button>
+                <button class="controls-btnDelete">Delete</button>
+            </div>
+            <div class="buttonGrid">
+                <button class="numbers" id="7">7</button>
+                <button class="numbers" id="8">8</button>
+                <button class="numbers" id="9">9</button>
+                <button class="math" id="x">x</button>
+                <button class="numbers" id="4">4</button>
+                <button class="numbers" id="5">5</button>
+                <button class="numbers" id="6">6</button>
+                <button class="math" id="÷">÷</button>
+                <button class="numbers" id="1">1</button>
+                <button class="numbers" id="2">2</button>
+                <button class="numbers" id="3">3</button>
+                <button class="math" id="-">-</button>
+                <button class="math" id=".">.</button>
+                <button class="numbers" id="0">0</button>
+                <button class="math" id="=">=</button>
+                <button class="math" id="+">+</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>Copyright ©
+        <script>
+            document.write(new Date().getFullYear().toString());
+        </script>
+        Robertas Vasiliauskas
+        <a href="https://github.com/RobertasVasiliauskas" target="_blank"><img alt="link to authors git hub page"
+                                                                               id="GitHub"
+                                                                               src="Images/github-mark.png"></a>
+    </p>
+</footer>
 
 </body>
 </html>

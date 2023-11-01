@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Light", "Tw Cen MT", "Times New Roman", serif;
+    font-size: 36px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    font-size: larger;
+    font-weight: bolder;
+
+}
+
+main {
+    flex: 1;
+}
+
+footer > p {
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.calculator {
+    background-color: #FCDDF2;
+    margin: 50px;
+    border-style: solid;
+    border-radius: 18px;
+    height: 640px;
+    width: 480px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display {
+    background-color: #FAF6F6;
+    margin: 18px;
+    width: 450px;
+    height: 100px;
+    border-style: solid;
+    border-radius: 5px;
+
+    display: flex;
+}
+
+.buttons {
+    padding: 5px;
+    width: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.controls {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonGrid {
+
+    box-sizing: border-box;
+
+   margin-top: 9px;
+    margin-bottom: 9px;
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-content: center;
+}
+
+.buttonGrid > button {
+    border-radius: 9px;
+    background-color: #FCB5B5;
+    margin: 1px;
+
+    width: calc(100% / 4 - 2px);
+    height: calc(100% / 4);
+}
+
+.controls-btnDelete {
+    border-radius: 9px;
+    height: 90px;
+    width: 175px;
+
+    background-color: #06BA63;
+}
+
+.controls-btnClear {
+    border-radius: 9px;
+    height: 90px;
+    width: 175px;
+    background-color: #0FFF95;
+}
+
+#GitHub{
+    margin-left: 9px;
+
+    width: 30px;
+    height: 30px;
+}
