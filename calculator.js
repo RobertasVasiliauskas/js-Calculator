@@ -10,29 +10,45 @@ function initialSetup() {
     displayFirstRow.textContent = "0";
 }
 
-function DomToText(text) {
+buttonClear.addEventListener('click', () =>{
+    displayFirstRow.textContent = "0";
+    displaySecondRow.textContent = "";
+    text = 0;
+})
+
+buttonDelete.addEventListener('click', () =>{
+
+    let string = DomToText(displayFirstRow.innerHTML);
+
+    string = string.slice(0, string.length-1);
+    text = string;
+
+    string === "" ?  displayFirstRow.textContent = "0" :  displayFirstRow.textContent = string;
+})
+
+function DomToText(string) {
     let start = -1, end = -1;
 
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    for (let i = 0; i < text.length; i++) {
+    for (let i = 0; i < string.length; i++) {
         for (let j = 0; j < numbers.length; j++) {
-            if (text[i].toString() === numbers[j].toString() && start === -1) start = i;
+            if (string[i].toString() === numbers[j].toString() && start === -1) start = i;
 
-            if (text[i].toString() === numbers[j].toString()) end = i + 1;
+            if (string[i].toString() === numbers[j].toString()) end = i + 1;
         }
     }
-    return text.slice(start, end);
+    return string.slice(start, end);
 }
 
-function FindSymbol(text) {
+function FindSymbol(string) {
     let symbols = ["÷", "*", "-", "+"]
     let symbol;
 
-    for (let i = 0; i < text.length; i++) {
+    for (let i = 0; i < string.length; i++) {
         for (let j = 0; j < symbols.length; j++) {
-            if (text[i].toString() === symbols[j].toString()) {
-                symbol = text[i];
+            if (string[i].toString() === symbols[j].toString()) {
+                symbol = string[i];
                 break;
             }
         }
@@ -71,7 +87,6 @@ function Math(numberOne, numberTwo, operator) {
     }
 
 }
-
 
 
 buttonMath.forEach((item) => {
