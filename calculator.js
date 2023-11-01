@@ -96,18 +96,22 @@ buttonMath.forEach((item) => {
 
         switch (item.id) {
             case "*":
+                text = DomToText(displayFirstRow.textContent);
                 displaySecondRow.textContent = text + " *";
                 displayFirstRow.textContent = "0";
                 break;
             case "÷":
+                text = DomToText(displayFirstRow.textContent);
                 displaySecondRow.textContent = text + " ÷";
                 displayFirstRow.textContent = "0";
                 break;
             case "-":
+                text = DomToText(displayFirstRow.textContent);
                 displaySecondRow.textContent = text + " -";
                 displayFirstRow.textContent = "0";
                 break;
             case "+":
+                text = DomToText(displayFirstRow.textContent);
                 displaySecondRow.textContent = text + " +";
                 displayFirstRow.textContent = "0";
                 break;
@@ -116,7 +120,13 @@ buttonMath.forEach((item) => {
                 let first = document.querySelector("#firstRow").outerHTML;
                 let second = document.querySelector("#secondRow").outerHTML;
 
-                result = Math(parseFloat(DomToText(second)), parseFloat(DomToText(first)), FindSymbol(document.querySelector("#secondRow").outerHTML));
+                if (DomToText(second) === "" && DomToText(first) !== "") {
+                    result = Math(parseFloat(DomToText(first)), 0, "+");
+                }
+                else if((DomToText(second) !== "" && DomToText(first) !== "" && !FindSymbol(document.querySelector("#secondRow").outerHTML))){
+                    result = Math(parseFloat(DomToText(first)), 0, "+");
+                }
+                else result = Math(parseFloat(DomToText(second)), parseFloat(DomToText(first)), FindSymbol(document.querySelector("#secondRow").outerHTML));
 
                 displaySecondRow.textContent = result;
                 displayFirstRow.textContent = "0";
